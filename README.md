@@ -1,6 +1,6 @@
 # [AAAI 2024] M3SOT: Multi-frame, Multi-field, Multi-space 3D Single Object Tracking
 
-The official code release of [M3SOT](./aaai_m3sot_arxiv.pdf).
+The official code release of [M3SOT](https://arxiv.org/pdf/2312.06117.pdf).
 
 ## M3SOT
 
