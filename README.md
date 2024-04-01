@@ -1,6 +1,6 @@
-# [AAAI 2024] M3SOT: Multi-frame, Multi-field, Multi-space 3D Single Object Tracking
+# [AAAI 2024] M3SOT: Multi-Frame, Multi-Field, Multi-Space 3D Single Object Tracking
 
-The official code release of [M3SOT](https://arxiv.org/pdf/2312.06117.pdf).
+The official code release of [M3SOT](https://ojs.aaai.org/index.php/AAAI/article/download/28152/28306).
 
 ## M3SOT
 
@@ -85,12 +85,13 @@ python main.py configs/3dtrack_kitti_car_cfg_multi_input2_perception_space.yaml 
 
 ### Testing
 
-To test a trained model, specify the checkpoint location with `--resume_from` argument and set the `--phase` argument as `test`.
+To test a trained model, specify the checkpoint with `--resume_from` argument and set the `--phase` argument as `test`.
 ```bash
 python main.py configs/3dtrack_kitti_car_cfg_multi_input2_perception_space.yaml --phase test --resume_from pretrained/m3sot_kitti_car_test_multi_input2_perception_space/checkpoints/best_epoch_precesion=87.4_success=75.9.ckpt
 ```
 
 ## Reproduction
+Please download the trained models from [*Google Cloud Drive*](https://drive.google.com/drive/folders/1_LnP9RgUxeUn4jVDFxwYEkiwnXJyXvH5?usp=sharing) to the project.
 
 | Model | Category | Success| Precision| Checkpoint
 |--|--|--|--|--|
@@ -99,7 +100,7 @@ python main.py configs/3dtrack_kitti_car_cfg_multi_input2_perception_space.yaml 
 | M3SOT-KITTI |Van | 59.4| 74.7| [*path*](./pretrained/m3sot_kitti_van_test_multi_input2_perception_space/checkpoints/best_epoch_precesion=74.7_success=59.4.ckpt)
 | M3SOT-KITTI | Cyclist| 70.3| 93.4| [*path*](./pretrained/m3sot_kitti_cyclist_test_multi_input2_perception_space/checkpoints/best_epoch_precesion=93.4_success=70.3.ckpt)
 
-Trained models are provided in the  [*pretrained*](./pretrained) directory. To reproduce the results, simply run the code with the corresponding `.yaml` file and checkpoint. 
+To reproduce the results, simply run the code with the corresponding `.yaml` file and checkpoint. 
 
 >The reported results of M3SOT checkpoints are produced on 3090 GPUs. Due to the precision issues, there could be minor differences if you test them with other GPUs.
 
@@ -118,23 +119,18 @@ python visualize.py --result_dir results/kitti_car_m3sot_test/m3sot_result.json
     <img src="./figures/KITTI_Ped.gif" width="100%"/>
 </div> 
 
-
-
-
-
-
-
- 
-
 ## Citation
 
 If you entrust our work with value, please consider giving a star ⭐ and citation.
 
 ```
 @inproceedings{liu2024m3sot,
-  title={M3SOT: Multi-frame, Multi-field, Multi-space 3D Single Object Tracking},
-  author={Liu, Jiaming and Wu, Yue and Gong, Maoguo and Miao, Qiguang and Ma, Wenping and Qin, Can},
-  booktitle={AAAI},
+  title={M3SOT: Multi-Frame, Multi-Field, Multi-Space 3D Single Object Tracking},
+  author={Liu, Jiaming and Wu, Yue and Gong, Maoguo and Miao, Qiguang and Ma, Wenping and Xu, Cai and Qin, Can},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={38},
+  number={4},
+  pages={3630--3638},
   year={2024}
 }
 ```
