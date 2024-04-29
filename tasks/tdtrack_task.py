@@ -168,7 +168,7 @@ class TDTrackTask_Multi_Input_Perception(BaseTask): # Same as TDTrackTask_Multi_
             }
             for front in range(self.cfg.dataset_cfg.template_set_size):
                 pre_frame_id = max(frame_id - front - 1, 0)
-                template_pcd, template_bbox_ref = crop_and_center_pcd(tracklet[pre_frame_id]['pcd'], tracklet[pre_frame_id]['bbox'],
+                template_pcd, template_bbox_ref = crop_and_center_pcd(tracklet[pre_frame_id]['pcd'], pred_bboxes[pre_frame_id],
                                           offset=self.cfg.dataset_cfg.template_offset, offset2=self.cfg.dataset_cfg.template_offset2,
                                           scale=self.cfg.dataset_cfg.template_scale, return_box=True)
                 template_pcd = resample_pcd(template_pcd, self.cfg.dataset_cfg.template_npts, is_training=False)
@@ -375,7 +375,7 @@ class TDTrackTask_Multi_Input_Perception_Gen(BaseTask):
             }
             for front in range(self.cfg.dataset_cfg.template_set_size):
                 pre_frame_id = max(frame_id - front - 1, 0)
-                template_pcd, template_bbox_ref = crop_and_center_pcd(tracklet[pre_frame_id]['pcd'], tracklet[pre_frame_id]['bbox'],
+                template_pcd, template_bbox_ref = crop_and_center_pcd(tracklet[pre_frame_id]['pcd'], pred_bboxes[pre_frame_id],
                                           offset=self.cfg.dataset_cfg.template_offset, offset2=self.cfg.dataset_cfg.template_offset2,
                                           scale=self.cfg.dataset_cfg.template_scale, return_box=True)
                 template_pcd = resample_pcd(template_pcd, self.cfg.dataset_cfg.template_npts, is_training=False)
@@ -551,7 +551,7 @@ class TDTrackTask_Multi_Input_Perception_Cross(BaseTask):
             }
             for front in range(self.cfg.dataset_cfg.template_set_size):
                 pre_frame_id = max(frame_id - front - 1, 0)
-                template_pcd, template_bbox_ref = crop_and_center_pcd(tracklet[pre_frame_id]['pcd'], tracklet[pre_frame_id]['bbox'],
+                template_pcd, template_bbox_ref = crop_and_center_pcd(tracklet[pre_frame_id]['pcd'], pred_bboxes[pre_frame_id],
                                           offset=self.cfg.dataset_cfg.template_offset, offset2=self.cfg.dataset_cfg.template_offset2,
                                           scale=self.cfg.dataset_cfg.template_scale, return_box=True)
                 template_pcd = resample_pcd(template_pcd, self.cfg.dataset_cfg.template_npts, is_training=False)
